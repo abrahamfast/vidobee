@@ -5,9 +5,23 @@
  */
 
 require('./bootstrap');
+
 // require('./vue2-dropzone');
 
+window.ProgressBar = function(ele){
+    this.thisEle = $(ele);
+    this.fileAdded = function() {
+        (this.thisEle).removeClass('hide').find('.progress-bar').css('width','0%');
+    }
 
+    this.uploading = function(progress) {
+        (this.thisEle).find('.progress-bar').attr('style', "width:"+progress+'%');
+    }
+
+    this.finish = function() {
+        //(this.thisEle).addClass('hide').find('.progress-bar').css('width','0%');
+    }
+}
 
 
 window.Vue = require('vue');

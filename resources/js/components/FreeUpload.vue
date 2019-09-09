@@ -15,11 +15,39 @@
           </div>
           <div class="modal-body px-md-4 px-lg-5 pb-4 pb-lg-5">
             <form method="POST">
+
+              <div class="box panel panel-default panel-default">
+    <div class="box-body panel-body  panel-body-form">
+    <label class="control-label" data-name="upload-larg-file">
+        <span class="label-text">Upload Video File</span><span class="required-sign"> *</span> </label>
+    <br>
+         <div class="btn-group">
+            <button type="button" class="btn btn-sm info" aria-label="Add file" id="add-file-btn">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Select file
+            </button>
+            <button type="button" class="btn btn-sm info" aria-label="Start upload" @click="upload" id="start-upload-btn">
+                <span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Start upload
+            </button>
+            <button type="button" class="btn btn-sm info" aria-label="Pause upload" @click="pause" id="pause-upload-btn">
+                <span class="glyphicon glyphicon-pause " aria-hidden="true"></span> Pause upload
+            </button>
+         </div>
+
+         <div class="">
+            <p>
+                <div class="progress hide" id="upload-progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"   style="width: 0%">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+            </p>
+         </div>
+    </div>
+</div>
+
+
               <div class="form-group">
                 <input type="email" class="form-control" name="sign-up-email" placeholder="Email Address">
-              </div>
-              <div class="form-group">
-                <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"  :use-custom-dropzone-options="true"></vue-dropzone>
               </div>
               <div class="form-group">
                 <input type="password" class="form-control" name="sign-up-password" placeholder="Password">
@@ -52,38 +80,55 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 
     export default {
         mounted() {
-            console.log('Component mounted.')
-        },
-         components: {
-          vueDropzone: vue2Dropzone
+             window.r = new R({
+                     target: 'https://video.platform.snapycloud.com/api/v1/Video/upload',
+                      testChunks: false,
+                      headers: {
+                        "X-Api-Key": "d00706349b21de2a0addd0c56d0ebef3"
+                      }
+                    });
+
+             const progressBar = new ProgressBar($('#upload-progress'));
+             r.on('fileAdded', function(file, event){
+                  progressBar.fileAdded();
+              });
+
+              r.on('fileSuccess', function(file, message){
+                  progressBar.finish();
+              });
+
+              r.on('progress', function(){
+                  progressBar.uploading(r.progress()*100);
+                  $('#pause-upload-btn').find('.glyphicon').removeClass('glyphicon-play').addClass('glyphicon-pause');
+              });
+
+              r.on('pause', function(){
+                  $('#pause-upload-btn').find('.glyphicon').removeClass('glyphicon-pause').addClass('glyphicon-play');
+              });
+
+              r.assignBrowse(document.getElementById('add-file-btn'));
         },
         data: function () {
           return {
-            dropzoneOptions: {
-                url: 'https://video.platform.snapycloud.com/api/v1/Video/uploading',
-                thumbnailWidth: 200,
-                autoProcessQueue: true,
-                uploadMultiple: true,
-                method: 'POST',
-                maxFilesize: 300,
-                // chunking: true
-            }
+            
           }
         },
           methods: {
             change: function () {
-              console.log('change')
-              let _self = this
-              let resumable = this.$refs.resumable
-              resumable.files.forEach(file => {
-                if (file.url) {
-                  _self.imgList.push(file)
-                }
-              })
+              
             },
             upload: function () {
               console.log('App upload')
-              this.$refs.resumable.upload()
+              r.upload()
+            },
+            pause: function(){
+                if (r.files.length>0) {
+                    if (r.isUploading()) {
+                        return  r.pause();
+                    }
+
+                    return r.upload();
+                }
             }
           }
 
