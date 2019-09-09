@@ -1945,11 +1945,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     window.r = new R({
-      target: 'https://video.platform.snapycloud.com/api/v1/Video/upload',
-      testChunks: false,
-      headers: {
-        "X-Api-Key": "d00706349b21de2a0addd0c56d0ebef3"
-      }
+      target: 'http://api.platform.vidobee.com/api/v1/Video/uploading',
+      testChunks: false
     });
     var progressBar = new ProgressBar($('#upload-progress'));
     r.on('fileAdded', function (file, event) {

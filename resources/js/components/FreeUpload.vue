@@ -81,11 +81,8 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
     export default {
         mounted() {
              window.r = new R({
-                     target: 'https://video.platform.snapycloud.com/api/v1/Video/upload',
+                     target: 'http://api.platform.vidobee.com/api/v1/Video/uploading',
                       testChunks: false,
-                      headers: {
-                        "X-Api-Key": "d00706349b21de2a0addd0c56d0ebef3"
-                      }
                     });
 
              const progressBar = new ProgressBar($('#upload-progress'));
