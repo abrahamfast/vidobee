@@ -6,6 +6,8 @@
     <title>VIDOBEE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="VIDEO HOSTING PLATFORM">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Begin loading animation -->
     <style>
         @keyframes hideLoader {
@@ -81,97 +83,21 @@
     <div class="loader">
         <div class="loading-animation"></div>
     </div>
-    <!-- <div class="alert alert-dismissible d-none d-md-block bg-primary-3 text-white py-4 py-md-3 px-0 mb-0 rounded-0 border-0">
-    <div class="container">
-        <div class="row no-gutters align-items-md-center justify-content-center">
-            <div class="col-lg-11 col-md d-flex flex-column flex-md-row align-items-md-center justify-content-lg-center">
-                <div class="mb-3 mb-md-0"><strong>Intro Sale</strong> $10 per license for Jumpstart's launch. Act fast, ends soon.</div>
-                <a class="btn btn-sm btn-success ml-md-3" target="_blank" href=>Redeem Offer</a>
-            </div>
-            <div class="col-auto position-absolute right">
-                <button type="button" class="close p-0 position-relative" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">
-                        <img src="assets/img/icons/interface/icon-x.svg" alt="Close" class="icon icon-sm bg-white" data-inject-svg>
-                    </span>
-                </button>
-            </div>
-        </div>
-    </div>
-</div> -->
-    <div class="navbar-container">
-        <nav class="navbar navbar-expand-lg navbar-dark" data-overlay data-sticky="top">
-            <div class="container">
-                <a class="navbar-brand navbar-brand-dynamic-color fade-page" href="index.html">
-                    <img alt="Jumpstart" data-inject-svg src="assets/img/logos/jumpstart.svg">
-                </a>
-                <div class="d-flex align-items-center order-lg-3">
-                    <a href="" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Login</a>
-                    <a href="" class="btn btn-info ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Upload</a>
-                    <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-                        <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
-                        <img alt="Navbar Toggler Close Icon" class="navbar-toggler-close icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-x.svg">
-                    </button>
-                </div>
-<!--                 <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-lg-end" id="navigation-menu">
-                    <ul class="navbar-nav my-3 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#">Demos</a></li>
-                    </ul>
-                </div> -->
-            </div>
-        </nav>
+    <div id="app">
+    @include('layouts.partial.navbar')
+        @yield('main')
+    @include('layouts.partial.footer')
+    <free-upload></free-upload>
     </div>
 
-    @yield('main')
-
-    <footer class="bg-primary-3 text-white links-white pb-4 footer-1">
-        <div class="container">
-
-            <div class="row flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
-                <div class="col-auto">
-                    <div class="d-flex flex-column flex-sm-row align-items-center text-small">
-                        <div class="text-muted">&copy; 2019 Page protected by reCAPTCHA and subject to Google's <a href="https://www.google.com/policies/privacy/" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto mt-3 mt-lg-0">
-                    <ul class="list-unstyled d-flex mb-0">
-                        <li class="mx-3">
-                            <a href="#" class="hover-fade-out">
-                                <img src="assets/img/icons/social/dribbble.svg" alt="Dribbble" class="icon icon-xs bg-white" data-inject-svg>
-                            </a>
-                        </li>
-                        <li class="mx-3">
-                            <a href="#" class="hover-fade-out">
-                                <img src="assets/img/icons/social/twitter.svg" alt="Twitter" class="icon icon-xs bg-white" data-inject-svg>
-                            </a>
-                        </li>
-                        <li class="mx-3">
-                            <a href="#" class="hover-fade-out">
-                                <img src="assets/img/icons/social/github.svg" alt="Github" class="icon icon-xs bg-white" data-inject-svg>
-                            </a>
-                        </li>
-                        <li class="mx-3">
-                            <a href="#" class="hover-fade-out">
-                                <img src="assets/img/icons/social/facebook.svg" alt="Facebook" class="icon icon-xs bg-white" data-inject-svg>
-                            </a>
-                        </li>
-                        <li class="mx-3">
-                            <a href="#" class="hover-fade-out">
-                                <img src="assets/img/icons/social/google.svg" alt="Google" class="icon icon-xs bg-white" data-inject-svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
     <a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up" data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
         <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
     </a>
     <!-- Required vendor scripts (Do not remove) -->
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script type="text/javascript" src="assets/js/jquery.min.js"></script> --}}
+    {{-- <script type="text/javascript" src="assets/js/popper.min.js"></script> --}}
+    {{-- <script type="text/javascript" src="assets/js/bootstrap.js"></script> --}}
 
     <!-- 
              This appears in the demo only.  This script ensures our demo countdowns are always showing a date in the future 
@@ -188,7 +114,7 @@
     </script>
 
     <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
-
+    
     <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
     <script type="text/javascript" src="assets/js/aos.js"></script>
     <!-- Clipboard (copies content from browser into OS clipboard) -->
