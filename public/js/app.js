@@ -1945,7 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     window.r = new R({
-      target: 'http://api.platform.vidobee.com/api/v1/Video/uploading',
+      target: 'https://api.platform.vidobee.com/api/v1/Video/uploading',
       testChunks: false
     });
     var progressBar = new ProgressBar($('#upload-progress'));

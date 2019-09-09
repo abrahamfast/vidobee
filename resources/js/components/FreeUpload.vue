@@ -81,7 +81,7 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
     export default {
         mounted() {
              window.r = new R({
-                     target: 'http://api.platform.vidobee.com/api/v1/Video/uploading',
+                     target: 'https://api.platform.vidobee.com/api/v1/Video/uploading',
                       testChunks: false,
                     });
 
