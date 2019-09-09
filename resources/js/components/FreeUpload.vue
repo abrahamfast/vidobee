@@ -85,8 +85,7 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
                       testChunks: false,
                       uploadMethod: "POST",
                       headers: {
-                        "X-Api-Key": "d00706349b21de2a0addd0c56d0ebef3",
-                        "Access-Control-Allow-Origin": "*"
+                        "X-Api-Key": "d00706349b21de2a0addd0c56d0ebef3"
                       }
                     });
 

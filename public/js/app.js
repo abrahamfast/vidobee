@@ -1949,8 +1949,7 @@ __webpack_require__.r(__webpack_exports__);
       testChunks: false,
       uploadMethod: "POST",
       headers: {
-        "X-Api-Key": "d00706349b21de2a0addd0c56d0ebef3",
-        "Access-Control-Allow-Origin": "*"
+        "X-Api-Key": "d00706349b21de2a0addd0c56d0ebef3"
       }
     });
     var progressBar = new ProgressBar($('#upload-progress'));
