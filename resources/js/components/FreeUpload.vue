@@ -83,6 +83,11 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
              window.r = new R({
                      target: 'https://api.platform.vidobee.com/api/v1/Video/uploading',
                       testChunks: false,
+                      uploadMethod: "POST",
+                      headers: {
+                        "X-Api-Key": "d00706349b21de2a0addd0c56d0ebef3",
+                        "Access-Control-Allow-Origin": "*"
+                      }
                     });
 
              const progressBar = new ProgressBar($('#upload-progress'));
