@@ -59,4 +59,7 @@ Vue.component('file-upload', require('vue-upload-component').default);
 
 const app = new Vue({
     el: '#app',
+        data:{ //only place where data is not a function
+        baseModel: false
+    }
 });

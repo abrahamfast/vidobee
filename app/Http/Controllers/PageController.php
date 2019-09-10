@@ -10,4 +10,13 @@ class PageController extends Controller
 	{
 		return view('index');
 	}
+
+	public function getVideoFrame($id)
+	{
+		$result = $this->api()->request('get', 'Video/' . $id);
+
+		return view('video_frame', [
+			'video' => $result
+		]);
+	}
 }

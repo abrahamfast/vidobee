@@ -133,6 +133,8 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
                     })
                     .then(response => (self.info = response))
 
+                    self.$root.baseModel = self.info.data
+
                     self.finish = true;
                 });
 
@@ -148,7 +150,8 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
                 r.assignBrowse(document.getElementById('add-file-btn'));
             },
             upload: function () {
-              if(this.fileSize <= 100000000){
+              let limitSize = 100000000;
+              if( limitSize > this.fileSize  ){
                   r.upload()  
               } else {
                 this.limitSize = true;

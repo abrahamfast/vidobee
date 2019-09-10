@@ -1991,6 +1991,7 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (response) {
           return self.info = response;
         });
+        self.$root.baseModel = self.info.data;
         self.finish = true;
       });
       r.on('progress', function () {
@@ -2003,7 +2004,9 @@ __webpack_require__.r(__webpack_exports__);
       r.assignBrowse(document.getElementById('add-file-btn'));
     },
     upload: function upload() {
-      if (this.fileSize <= 100000000) {
+      var limitSize = 100000000;
+
+      if (limitSize > this.fileSize) {
         r.upload();
       } else {
         this.limitSize = true;
@@ -2148,40 +2151,34 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Multiselect: vue_multiselect__WEBPACK_IMPORTED_MODULE_0___default.a
   },
-  mounted: function mounted() {
-    console.log('mounted');
-  },
   data: function data() {
     return {
       title: '',
       email: '',
       description: '',
       agree: false,
-      value: [],
-      options: [{
-        name: 'Vue.js',
-        code: 'vu'
-      }, {
-        name: 'Javascript',
-        code: 'js'
-      }, {
-        name: 'Open Source',
-        code: 'os'
-      }]
+      tags: [],
+      options: ['Vue.js', 'Javascript', 'Open Source']
     };
   },
   methods: {
     addTag: function addTag(newTag) {
-      var tag = {
-        name: newTag,
-        code: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000)
-      };
-      this.options.push(tag);
-      this.value.push(tag);
+      this.options.push(newTag);
+      this.tags.push(newTag);
     },
     next: function next() {
-      $('#free-upload-step-two').modal('hide');
-      $('#free-upload-proccess').modal('show');
+      var self = this;
+      HTTP.post('api/attachment/update', {
+        id: this.$root.baseModel.id,
+        title: self.title,
+        email: self.email,
+        tags: self.tags,
+        description: self.description
+      }).then(function (res) {
+        self.info = res;
+        $('#free-upload-step-two').modal('hide');
+        $('#free-upload-proccess').modal('show');
+      });
     },
     upload: function upload() {
       console.log('App upload');
@@ -66879,8 +66876,8 @@ var render = function() {
                     _c("input", {
                       directives: [
                         {
-                          name: "mode",
-                          rawName: "v-mode",
+                          name: "model",
+                          rawName: "v-model",
                           value: _vm.title,
                           expression: "title"
                         }
@@ -66890,6 +66887,15 @@ var render = function() {
                         type: "text",
                         name: "title",
                         placeholder: "caption"
+                      },
+                      domProps: { value: _vm.title },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.title = $event.target.value
+                        }
                       }
                     })
                   ]),
@@ -66898,8 +66904,8 @@ var render = function() {
                     _c("input", {
                       directives: [
                         {
-                          name: "mode",
-                          rawName: "v-mode",
+                          name: "model",
+                          rawName: "v-model",
                           value: _vm.email,
                           expression: "email"
                         }
@@ -66909,6 +66915,15 @@ var render = function() {
                         type: "email",
                         name: "sign-up-email",
                         placeholder: "Email Address"
+                      },
+                      domProps: { value: _vm.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.email = $event.target.value
+                        }
                       }
                     })
                   ]),
@@ -66921,8 +66936,6 @@ var render = function() {
                         attrs: {
                           "tag-placeholder": "Add this as new tag",
                           placeholder: "Search or add a tag",
-                          label: "name",
-                          "track-by": "code",
                           options: _vm.options,
                           multiple: true,
                           taggable: true
@@ -81480,7 +81493,11 @@ Vue.component('file-upload', __webpack_require__(/*! vue-upload-component */ "./
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    //only place where data is not a function
+    baseModel: false
+  }
 });
 
 /***/ }),

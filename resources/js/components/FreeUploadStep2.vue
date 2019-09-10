@@ -16,14 +16,14 @@
             <form method="POST">
 
               <div class="form-group">
-                <input type="text" class="form-control" v-mode="title" name="title" placeholder="caption">
+                <input type="text" class="form-control" v-model="title" name="title" placeholder="caption">
               </div>
 
               <div class="form-group">
-                <input type="email" class="form-control" v-mode="email" name="sign-up-email" placeholder="Email Address">
+                <input type="email" class="form-control" v-model="email" name="sign-up-email" placeholder="Email Address">
               </div>
               <div class="form-group">
-                <multiselect  v-model="tags" tag-placeholder="Add this as new tag" placeholder="Search or add a tag" label="name" track-by="code" :options="options" :multiple="true" :taggable="true" @tag="addTag"></multiselect>
+                <multiselect  v-model="tags" tag-placeholder="Add this as new tag" placeholder="Search or add a tag"  :options="options" :multiple="true" :taggable="true" @tag="addTag"></multiselect>
               </div>
 
               <div class="form-group">
@@ -52,35 +52,35 @@
   
     export default {
         components: { Multiselect},
-        mounted() {
-            console.log('mounted');
-        },
         data: function () {
           return {
             title: '',
             email: '',
             description: '',
             agree: false,
-      value: [],
-      options: [
-        { name: 'Vue.js', code: 'vu' },
-        { name: 'Javascript', code: 'js' },
-        { name: 'Open Source', code: 'os' }
-      ]
+            tags: [],
+            options: ['Vue.js','Javascript','Open Source']
           }
         },
           methods: {
             addTag (newTag) {
-                      const tag = {
-                        name: newTag,
-                        code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
-                      }
-                      this.options.push(tag)
-                      this.value.push(tag)
+                      this.options.push(newTag)
+                      this.tags.push(newTag)
               },
             next: function () {
-                $('#free-upload-step-two').modal('hide')
-                $('#free-upload-proccess').modal('show')
+                  let self = this;
+                  HTTP.post('api/attachment/update', {
+                      id: this.$root.baseModel.id,
+                      title: self.title,
+                      email: self.email,
+                      tags: self.tags,
+                      description: self.description
+                    })
+                    .then(function  (res){
+                        self.info = res
+                        $('#free-upload-step-two').modal('hide')
+                        $('#free-upload-proccess').modal('show')
+                    })
             },
             upload: function () {
               console.log('App upload')

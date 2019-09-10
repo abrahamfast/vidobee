@@ -8,6 +8,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('uploading', 'VideoUploader@postUpload');
 Route::post('attachment', 'ApiController@attachment');
+Route::post('attachment/update', 'ApiController@update');
 /// add attachment 
 // add video record
 // update meta data
