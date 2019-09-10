@@ -24,6 +24,13 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+window.HTTP = window.axios.create({
+  baseURL: '',
+  headers: {
+    "X-Api-Key": 'd00706349b21de2a0addd0c56d0ebef3'
+  }
+})
+
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just

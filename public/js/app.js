@@ -1954,7 +1954,8 @@ __webpack_require__.r(__webpack_exports__);
       fileSize: '',
       fileType: '',
       limitSize: false,
-      limitType: false
+      limitType: false,
+      info: false
     };
   },
   methods: {
@@ -1980,6 +1981,16 @@ __webpack_require__.r(__webpack_exports__);
       });
       r.on('fileSuccess', function (file, message) {
         progressBar.finish();
+        HTTP.post('api/attachment', {
+          field: "video",
+          name: self.fileName,
+          relatedType: 'Video',
+          role: "Attachment",
+          type: self.fileType,
+          size: self.fileSize
+        }).then(function (response) {
+          return self.info = response;
+        });
         self.finish = true;
       });
       r.on('progress', function () {
@@ -2067,22 +2078,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  methods: {
-    change: function change() {},
-    upload: function upload() {
-      console.log('App upload');
-      r.upload();
-    },
-    pause: function pause() {
-      if (r.files.length > 0) {
-        if (r.isUploading()) {
-          return r.pause();
-        }
-
-        return r.upload();
-      }
-    }
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -81519,6 +81515,12 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.HTTP = window.axios.create({
+  baseURL: '',
+  headers: {
+    "X-Api-Key": 'd00706349b21de2a0addd0c56d0ebef3'
+  }
+});
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just

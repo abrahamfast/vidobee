@@ -93,7 +93,8 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
             fileSize: '',
             fileType: '',
             limitSize: false,
-            limitType: false
+            limitType: false,
+            info: false
           }
         },
           methods: {
@@ -121,6 +122,17 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
 
                 r.on('fileSuccess', function(file, message){
                     progressBar.finish();
+
+                    HTTP.post('api/attachment', {
+                      field: "video",
+                      name: self.fileName,
+                      relatedType: 'Video',
+                      role: "Attachment",
+                      type: self.fileType,
+                      size: self.fileSize
+                    })
+                    .then(response => (self.info = response))
+
                     self.finish = true;
                 });
 
