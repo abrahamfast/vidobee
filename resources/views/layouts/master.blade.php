@@ -8,6 +8,7 @@
     <meta name="description" content="VIDEO HOSTING PLATFORM">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
     <!-- Begin loading animation -->
     <style>
         @keyframes hideLoader {
@@ -88,6 +89,8 @@
         @yield('main')
     @include('layouts.partial.footer')
     <free-upload></free-upload>
+    <free-upload-step-two></free-upload-step-two>
+    <free-upload-proccess></free-upload-proccess>
     </div>
 
     <a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up" data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">

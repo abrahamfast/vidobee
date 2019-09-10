@@ -11,7 +11,7 @@ require('./bootstrap');
 window.ProgressBar = function(ele){
     this.thisEle = $(ele);
     this.fileAdded = function() {
-        (this.thisEle).removeClass('hide').find('.progress-bar').css('width','0%');
+        (this.thisEle).removeAttr('hidden').find('.progress-bar').css('width','0%');
     }
 
     this.uploading = function(progress) {
@@ -19,7 +19,7 @@ window.ProgressBar = function(ele){
     }
 
     this.finish = function() {
-        //(this.thisEle).addClass('hide').find('.progress-bar').css('width','0%');
+        (this.thisEle).attr('hidden');
     }
 }
 
@@ -27,6 +27,10 @@ window.ProgressBar = function(ele){
 window.Vue = require('vue');
 window.Vue.config.silent = true
 window.Vue.config.devtools = true
+
+import VueEditorMarkdown from 'vue-editor-markdown';
+
+Vue.use(VueEditorMarkdown);
 
 /**
  * The following block of code may be used to automatically register your
@@ -40,8 +44,12 @@ window.Vue.config.devtools = true
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('free-upload', require('./components/FreeUpload.vue').default);
+Vue.component('free-upload-step-two', require('./components/FreeUploadStep2.vue').default);
+Vue.component('free-upload-proccess', require('./components/FreeUploadProccess.vue').default);
 Vue.component('btn-modal', require('./components/BtnModal.vue').default);
 Vue.component('file-upload', require('vue-upload-component').default);
+//Multiselect: window.VueMultiselect.default
+// Vue.component('Multiselect', require('vue-multiselect').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
