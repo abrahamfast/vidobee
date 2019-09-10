@@ -1,0 +1,59 @@
+<template>
+    <div class="modal fade" id="free-upload-proccess" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center border-0">
+            <div class="w-100 pt-4">
+              <h5 class="h3">Proccess</h5>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <img src="/assets/img/icons/interface/icon-x.svg" alt="Icon">
+              </span>
+            </button>
+          </div>
+          <div class="modal-body px-md-4 px-lg-5 pb-4 pb-lg-5">
+            <form method="POST">
+              <button class="btn btn-primary btn-block" type="submit">Next</button>
+            </form>
+            <div class="text-center text-small mt-3">
+              Already have an account? <a href="account-sign-in-simple.html">Sign in here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</template>
+
+<script>
+
+    export default {
+        mounted() {
+            console.log('mounted');
+        },
+        data: function () {
+          return {
+            
+          }
+        },
+          methods: {
+            change: function () {
+
+            },
+            upload: function () {
+              console.log('App upload')
+              r.upload()
+            },
+            pause: function(){
+                if (r.files.length>0) {
+                    if (r.isUploading()) {
+                        return  r.pause();
+                    }
+
+                    return r.upload();
+                }
+            }
+          }
+
+    }
+</script>
