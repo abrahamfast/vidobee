@@ -76,7 +76,7 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
         mounted() {
              let self = this;
              window.r = new R({
-                      target: 'http://localhost:8000/api/uploading',
+                      target: 'https://vidobee.com/api/uploading',
                       testChunks: false,
                       // chunkSize: 2000000
                     });

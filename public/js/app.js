@@ -1940,7 +1940,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var self = this;
     window.r = new R({
-      target: 'http://localhost:8000/api/uploading',
+      target: 'https://vidobee.com/api/uploading',
       testChunks: false // chunkSize: 2000000
 
     });
