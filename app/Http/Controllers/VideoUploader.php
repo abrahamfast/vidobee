@@ -14,8 +14,8 @@ class VideoUploader extends Controller
         $request = new SimpleRequest();
         $response = new SimpleResponse();
         $resumable = new Resumable($request, $response);
-        $resumable->tempFolder = '/Users/abraham/code/vidobee/storage/php_big_tmp_file/';
-        $resumable->uploadFolder = '/Users/abraham/code/vidobee/storage/videos/';
+        $resumable->tempFolder = getenv('TMP_FOLDER');
+        $resumable->uploadFolder = getenv('STORE_FOLDER');
         $resumable->process();
     }
 }
