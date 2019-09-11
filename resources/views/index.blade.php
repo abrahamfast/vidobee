@@ -10,14 +10,14 @@
             <div class="col col-md-10 col-xl-9 text-center text-lg-left">
               <section>
                 <div data-aos="fade-right">
-                  <h1 class="display-3"><mark data-aos="highlight-text" data-aos-delay="200">Save time</mark> with Jumpstart</h1>
+                  <h1 class="display-3"><mark data-aos="highlight-text" data-aos-delay="200">Save time</mark> with Vidobee</h1>
                   <p class="lead">
                     Berspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
                   </p>
                 </div>
                 <div class="d-flex flex-column flex-sm-row mt-4 mt-md-5 justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="300">
-                  <a href="#" class="btn btn-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">Explore Layouts</a>
-                  <a href="https://themeforest.net/item/jumpstart-app-and-software-template/24207799" class="btn btn-outline-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">Purchase</a>
+                  <a href="#" class="btn btn-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">Upload Video</a>
+                  <a href="https://themeforest.net/item/Vidobee-app-and-software-template/24207799" class="btn btn-outline-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">price</a>
                 </div>
               </section>
             </div>
@@ -45,7 +45,7 @@
       <div class="container">
         <div class="row section-title justify-content-center text-center">
           <div class="col-md-9 col-lg-8 col-xl-7">
-            <h3 class="display-4"><mark data-aos='highlight-text' data-aos-delay='500'>Do more</mark> with Jumpstart</h3>
+            <h3 class="display-4"><mark data-aos='highlight-text' data-aos-delay='500'>Do more</mark> with Vidobee</h3>
             <div class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</div>
           </div>
         </div>
@@ -144,7 +144,7 @@
         <div class="row">
           <div class="col-xl-5 col-lg-6 col-md-7">
             <blockquote class="blockquote p-0 border-0 text-white">
-                    &ldquo;We all know the stigma around build times and the ever expanding arsenal of tooling in modern web apps. Fear not, Jumpstart does away with all of that.&rdquo;
+                    &ldquo;We all know the stigma around build times and the ever expanding arsenal of tooling in modern web apps. Fear not, Vidobee does away with all of that.&rdquo;
                 </blockquote>
             <img class="bg-white opacity-50 mt-3 mt-md-4 mb-3" src="assets/img/logos/brand/kanba.svg" alt="Kanba company logo" data-inject-svg>
             <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center">
@@ -375,7 +375,7 @@
       <div class="container">
         <div class="row section-title justify-content-center text-center">
           <div class="col-md-9 col-lg-8 col-xl-7">
-            <h3 class="display-4"><mark data-aos='highlight-text' data-aos-delay='500'>Do more</mark> with Jumpstart</h3>
+            <h3 class="display-4"><mark data-aos='highlight-text' data-aos-delay='500'>Do more</mark> with Vidobee</h3>
             <div class="lead">The simplest way for anyone to embed video content, for free.</div>
           </div>
         </div>
@@ -448,7 +448,7 @@
               <div class="ml-sm-3 ml-md-4">
                 <h5>High definition</h5>
                 <p>
-                  Create rich layouts, using any combination of elements. Jumpstart’s UI elements are designed to play nice together, wherever you place them.
+                  Create rich layouts, using any combination of elements. Vidobee’s UI elements are designed to play nice together, wherever you place them.
                 </p>
                 <a href="style-guide.html" class="btn btn-sm btn-primary fade-page">View Style Guide</a>
               </div>
@@ -460,7 +460,7 @@
               <div class="ml-sm-3 ml-md-4">
                 <h5>Safe embeds</h5>
                 <p>
-                  Enhance the functionality of your site with Jumpstart's convenient suite of easily configurable javascript plugins.
+                  Enhance the functionality of your site with Vidobee's convenient suite of easily configurable javascript plugins.
                 </p>
                 <a href="plugins.html" class="btn btn-sm btn-primary fade-page">View Plugins</a>
               </div>

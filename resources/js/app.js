@@ -48,6 +48,7 @@ Vue.component('free-upload-step-two', require('./components/FreeUploadStep2.vue'
 Vue.component('free-upload-proccess', require('./components/FreeUploadProccess.vue').default);
 Vue.component('btn-modal', require('./components/BtnModal.vue').default);
 Vue.component('file-upload', require('vue-upload-component').default);
+Vue.component('player', require('./components/Player').default);
 //Multiselect: window.VueMultiselect.default
 // Vue.component('Multiselect', require('vue-multiselect').default);
 
@@ -60,6 +61,7 @@ Vue.component('file-upload', require('vue-upload-component').default);
 const app = new Vue({
     el: '#app',
         data:{ //only place where data is not a function
-        baseModel: false
+        baseModel: false,
+        baseUrl: 'https://vidobee.com'
     }
 });

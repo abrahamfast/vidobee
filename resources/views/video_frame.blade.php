@@ -20,28 +20,10 @@
       </section>
     </div>
 
-    <section class="border-bottom" id="video-players">
-      <div class="container">
-        <div class="row justify-content-between align-items-start">
-          <div class="col-lg-3 mb-4 sticky-lg-top">
-            <h4>Video Players</h4>
-            <p>Youtube, Vimeo and locally hosted videos in a versatile, seamless interface. Powered by the Plyr plugin.</p>
-            <a href="documentation/js-plyr.html" target="_blank">View Documentation</a>
-          </div>
-          <div class="col-lg-8">
-            <div class="row mb-md-5 mb-4">
-              <div class="col">
-                <h6>Self-Hosted Player</h6>
-                <div class="rounded o-hidden">
-                  <video preload="metadata"  class="plyr" controls crossorigin playsinline ></video>
-                </div>
-              </div>
-            </div>
 
-          </div>
-        </div>
-      </div>
-    </section>
+
+          <player></player>
+
 
 <!-- Plyr resources and browser polyfills are specified in the pen settings -->
 <!-- Hls.js 0.9.x and 0.10.x both have critical bugs affecting this demo. Using fixed git hash to when it was working (0.10.0 pre-release), until https://github.com/video-dev/hls.js/issues/1790 has been resolved -->

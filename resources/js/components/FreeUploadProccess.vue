@@ -4,7 +4,8 @@
         <div class="modal-content">
           <div class="modal-header text-center border-0">
             <div class="w-100 pt-4">
-              <h5 class="h3">Proccess</h5>
+              <h5 class="h3">Complete</h5>
+              <p>congrilation</p>
             </div>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">
@@ -13,11 +14,9 @@
             </button>
           </div>
           <div class="modal-body px-md-4 px-lg-5 pb-4 pb-lg-5">
-            <form method="POST">
-              <button class="btn btn-primary btn-block" type="submit">Next</button>
-            </form>
+              <a :href="link" class="btn btn-primary btn-block" type="submit">Embeded Code</a>
             <div class="text-center text-small mt-3">
-              Already have an account? <a href="account-sign-in-simple.html">Sign in here</a>
+              Already have an account? <a href="/signup">Sign in here</a>
             </div>
           </div>
         </div>
@@ -30,10 +29,11 @@
     export default {
         mounted() {
             console.log('mounted');
+            this.link = this.$root.baseUrl + this.$root.baseModel.id;
         },
         data: function () {
           return {
-            
+            link: ''
           }
         },
           methods: {
