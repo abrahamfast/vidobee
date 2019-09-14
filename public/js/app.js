@@ -1843,10 +1843,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  },
-  props: ['target']
+  props: ['target', 'classname']
 });
 
 /***/ }),
@@ -63265,19 +63262,21 @@ process.umask = function() { return 0; };
       return(totalSize);
     };
     $.getName = function(){
-      var name = 0;
+      var name = '';
       $h.each($.files, function(file){
         name = file.fileName;
       });
-      return(name);
+      return name;
     };
-     $.getType = function(){
+
+    $.getType = function(){
       var type = '';
       $h.each($.files, function(file){
         type = file.file.type;
       });
-      return(type);
+      return type;
     };
+
     $.handleDropEvent = function (e) {
       onDrop(e);
     };
@@ -66553,15 +66552,14 @@ var render = function() {
   return _c(
     "button",
     {
-      staticClass:
-        "btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3",
+      class: _vm.classname,
       attrs: {
         type: "button",
         "data-toggle": "modal",
         "data-target": _vm.target
       }
     },
-    [_vm._v("Purchase Now")]
+    [_vm._v("Upload Video")]
   )
 }
 var staticRenderFns = []
@@ -82140,8 +82138,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/abraham/code/vidobee/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/abraham/code/vidobee/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/devops/code/vidobee/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/devops/code/vidobee/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

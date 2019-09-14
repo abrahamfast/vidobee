@@ -5,7 +5,7 @@
             <img alt="Jumpstart" data-inject-svg src="assets/img/logos/jumpstart.svg">
           </a>
           <div class="d-flex align-items-center order-lg-3">
-            <btn-modal target="#free-upload"></btn-modal>
+            <btn-modal target="#free-upload" classname="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3"></btn-modal>
             <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navigation-menu" data-toggle="collapse" type="button">
               <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
               <img alt="Navbar Toggler Close Icon" class="navbar-toggler-close icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-x.svg">

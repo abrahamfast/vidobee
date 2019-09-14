@@ -16,8 +16,8 @@
                   </p>
                 </div>
                 <div class="d-flex flex-column flex-sm-row mt-4 mt-md-5 justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="300">
-                  <a href="#" class="btn btn-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">Upload Video</a>
-                  <a href="https://themeforest.net/item/Vidobee-app-and-software-template/24207799" class="btn btn-outline-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">price</a>
+                  <btn-modal target="#free-upload" classname="btn btn-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0"></btn-modal>
+                  <a href="{{ route('signup') }}" class="btn btn-outline-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">price</a>
                 </div>
               </section>
             </div>
