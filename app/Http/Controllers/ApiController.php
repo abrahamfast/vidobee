@@ -23,8 +23,10 @@ class ApiController extends Controller
 
 	public function update(Request $req)
 	{
+
 		$data = $req->all();
-		return $this->api()->request('PUT', 'Video/5d7803be53d5694e6' , [
+
+		return $this->api()->request('PUT', 'Video/' . $data['id'] , [
 			'name' => $data['title'],
 			'tags' => $data['tags'],
 			'emailOwner' => $data['email'],
