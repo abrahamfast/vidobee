@@ -2,7 +2,7 @@
       <nav class="navbar navbar-expand-lg navbar-light" data-sticky="top">
         <div class="container">
           <a class="navbar-brand navbar-brand-dynamic-color fade-page" href="{{ route('home') }}">
-            <img alt="Jumpstart" data-inject-svg src="assets/img/logos/jumpstart.svg">
+            <img width="130px" alt="vidobee" src="assets/img/logos/vidobee.png">
           </a>
           <div class="d-flex align-items-center order-lg-3">
             <btn-modal target="#free-upload" classname="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3"></btn-modal>
