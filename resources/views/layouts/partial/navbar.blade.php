@@ -1,7 +1,7 @@
     <div class="navbar-container">
       <nav class="navbar navbar-expand-lg navbar-light" data-sticky="top">
         <div class="container">
-          <a class="navbar-brand navbar-brand-dynamic-color fade-page" href="index.html">
+          <a class="navbar-brand navbar-brand-dynamic-color fade-page" href="{{ route('home') }}">
             <img alt="Jumpstart" data-inject-svg src="assets/img/logos/jumpstart.svg">
           </a>
           <div class="d-flex align-items-center order-lg-3">
