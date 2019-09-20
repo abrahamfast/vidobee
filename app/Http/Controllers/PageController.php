@@ -23,7 +23,16 @@ class PageController extends Controller
 
 	public function getVideoFrame($id)
 	{
-		return view('video_frame');
+		return view('video_frame', [
+			'id' => $id
+		]);
+	}
+
+	public function getVideoEmbed($id)
+	{
+		return view('video_embed', [
+			'id' => $id
+		]);
 	}
 
 	public function getVideo($id)

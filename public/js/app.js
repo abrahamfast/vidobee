@@ -2087,6 +2087,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.link = this.$root.baseUrl + "/" + this.$root.baseModel;
@@ -2239,9 +2241,11 @@ __webpack_require__.r(__webpack_exports__);
 //@TODO must instal player and hls from npm
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    console.log('Component mounted.');
+    var self = this; // HTTP.get('api/video/' + self.$root.baseModel).then(response => (this.info = response))
+
     document.addEventListener('DOMContentLoaded', function () {
-      var source = 'https://cdn.video.snapycloud.com/5d6bc0695551544d5/playlist.m3u8';
+      var source = 'https://cdn.video.snapycloud.com/' + self.$root.baseModel + '/playlist.m3u8';
+      self.poster = 'https://cdn.video.snapycloud.com/cover/' + self.$root.baseModel + '.jpg';
       var video = document.querySelector('video'); // For more options see: https://github.com/sampotts/plyr/#options
       // captions.update is required for captions to work with hls.js
 
@@ -2309,6 +2313,11 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   props: ['target'],
+  data: function data() {
+    return {
+      info: false
+    };
+  },
   methods: {
     play: function play() {
       player.play();
@@ -66890,12 +66899,26 @@ var render = function() {
               { staticClass: "modal-body px-md-4 px-lg-5 pb-4 pb-lg-5" },
               [
                 _c(
+                  "span",
+                  {
+                    attrs: {
+                      "data-countup": "",
+                      "data-start": "0",
+                      "data-end": "1000",
+                      "data-duration": "0.1",
+                      "data-suffix": "%"
+                    }
+                  },
+                  [_vm._v("0%")]
+                ),
+                _vm._v(" "),
+                _c(
                   "a",
                   {
                     staticClass: "btn btn-primary btn-block",
                     attrs: { href: _vm.link }
                   },
-                  [_vm._v("Embeded Code")]
+                  [_vm._v("embed Code")]
                 ),
                 _vm._v(" "),
                 _vm._m(1)
@@ -66914,9 +66937,27 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "modal-header text-center border-0" }, [
       _c("div", { staticClass: "w-100 pt-4" }, [
-        _c("h5", { staticClass: "h3" }, [_vm._v("Complete")]),
+        _c("h5", { staticClass: "h3" }, [_vm._v("Progress")]),
         _vm._v(" "),
-        _c("p", [_vm._v("congrilation")])
+        _c("p", [
+          _vm._v("Please wait for initializing video then get embed code")
+        ]),
+        _vm._v(" "),
+        _c("h2", {
+          staticClass: "text-primary mb-2",
+          attrs: {
+            "data-countup": "",
+            "data-start": "0",
+            "data-end": "100",
+            "data-duration": "500",
+            "data-decimal-places": "",
+            "data-prefix": "progress ",
+            "data-separator": ",",
+            "data-grouping": "true",
+            "data-suffix": "",
+            "data-easing": "false"
+          }
+        })
       ]),
       _vm._v(" "),
       _c(
@@ -67312,7 +67353,8 @@ var staticRenderFns = [
                           preload: "metadata",
                           controls: "",
                           crossorigin: "",
-                          playsinline: ""
+                          playsinline: "",
+                          poster: "poster"
                         }
                       })
                     ])
@@ -81709,7 +81751,7 @@ var app = new Vue({
   el: '#app',
   data: {
     //only place where data is not a function
-    baseModel: false,
+    baseModel: "5d8540860507d66eb",
     baseUrl: 'https://vidobee.com'
   }
 });

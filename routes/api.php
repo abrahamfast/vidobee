@@ -6,7 +6,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('player/{id}', 'ApiController@getVideo');
+Route::get('video/{id}', 'ApiController@getVideo');
 
 Route::post('uploading', 'VideoUploader@postUpload');
 Route::post('attachment', 'ApiController@attachment');

@@ -13,7 +13,7 @@
               <div class="col">
                 <h6>Self-Hosted Player</h6>
                 <div class="rounded o-hidden">
-                  <video preload="metadata"  class="plyr" controls crossorigin playsinline ></video>
+                  <video preload="metadata"  class="plyr" controls crossorigin playsinline poster="poster" ></video>
                 </div>
               </div>
             </div>
@@ -30,9 +30,11 @@
 //@TODO must instal player and hls from npm
     export default {
         mounted() {
-            console.log('Component mounted.')
+          var self = this;
+           // HTTP.get('api/video/' + self.$root.baseModel).then(response => (this.info = response))
             document.addEventListener('DOMContentLoaded', () => {
-  const source = 'https://cdn.video.snapycloud.com/5d6bc0695551544d5/playlist.m3u8';
+  const source = 'https://cdn.video.snapycloud.com/' + self.$root.baseModel + '/playlist.m3u8';
+  self.poster = 'https://cdn.video.snapycloud.com/cover/' + self.$root.baseModel + '.jpg';
   const video = document.querySelector('video');
   
   // For more options see: https://github.com/sampotts/plyr/#options
@@ -89,6 +91,11 @@
 });
         },
         props: ['target'],
+        data(){
+          return {
+            info: false
+          }
+        },
         methods: {
         	play(){
         		player.play();

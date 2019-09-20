@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('main')
+
+
 <div data-overlay="" class="bg-primary-3 text-white o-hidden" style="padding-top: 80px !important;">
       <section class="pb-0">
         <div class="container pb-5">
@@ -25,8 +27,33 @@
           <player></player>
 
 
-<!-- Plyr resources and browser polyfills are specified in the pen settings -->
-<!-- Hls.js 0.9.x and 0.10.x both have critical bugs affecting this demo. Using fixed git hash to when it was working (0.10.0 pre-release), until https://github.com/video-dev/hls.js/issues/1790 has been resolved -->
+
+ <div class="container pb-100">
+            <div class="row justify-content-around">
+            <div class="col-lg-12 col-xl-8 py-4 py-md-5">
+                <h1>Embed Code</h1>
+                <div class="lead mb-0">
+                  <p>Using embed code, you can easily copy the embed code of your site.</p>
+                </div>
+                <hr class="my-4 my-md-12">
+              </div>
+             <div class="code-snippet"><button class="btn btn-sm btn-primary btn-clipboard" type="button" title="" data-original-title="Copy To Clipboard">Copy</button><code class="language-html"><pre class="  language-html">
+                 {{{ "<div style=\"width: 100%; height: 0px; position: relative; padding-bottom: 56.250%;\">
+                            <iframe src=\"https://vidobee.com/video/{$id}/embed\" 
+                                    frameborder=\"0\" 
+                                    width=\"100%\" 
+                                    height=\"100%\" 
+                                    allowfullscreen 
+                                    style=\"width: 100%; height: 100%; position: absolute;\">
+                            </iframe>
+                      </div>" }}}
+             </pre></code></div>
+
+            </div>
+          </div>
+        </div>
+            
+     
 
 
 @stop

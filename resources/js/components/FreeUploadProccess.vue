@@ -4,8 +4,9 @@
         <div class="modal-content">
           <div class="modal-header text-center border-0">
             <div class="w-100 pt-4">
-              <h5 class="h3">Complete</h5>
-              <p>congrilation</p>
+              <h5 class="h3">Progress</h5>
+              <p>Please wait for initializing video then get embed code</p>
+              <h2 class="text-primary mb-2" data-countup data-start="0" data-end="100" data-duration="500" data-decimal-places="" data-prefix="progress " data-separator="," data-grouping="true" data-suffix="" data-easing="false"></h2>
             </div>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">
@@ -14,7 +15,8 @@
             </button>
           </div>
           <div class="modal-body px-md-4 px-lg-5 pb-4 pb-lg-5">
-              <a :href="link" class="btn btn-primary btn-block">Embeded Code</a>
+            <span data-countup data-start="0" data-end="1000" data-duration="0.1" data-suffix="%">0%</span>
+              <a :href="link" class="btn btn-primary btn-block">embed Code</a>
             <div class="text-center text-small mt-3">
               Already have an account? <a href="/signup">Sign in here</a>
             </div>

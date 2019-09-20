@@ -4,7 +4,7 @@
         <div class="modal-content">
           <div class="modal-header text-center border-0">
             <div class="w-100 pt-4">
-              <h5 class="h3">Upload</h5>
+              <h5 class="h3">Upload</h5>              
             </div>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">

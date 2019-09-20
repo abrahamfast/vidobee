@@ -14,6 +14,7 @@ class ApiController extends Controller
 		return $this->api()->request('post', 'Video', [
 			'name' => $attachment['name'],
 			"proccess" => "None",
+			"freeMember" => true,
 			"assignedUserId" => "1",
 			"assignedUserName" => "Admin",
 			'videoFileId' => $attachment['id'],
@@ -32,5 +33,10 @@ class ApiController extends Controller
 			'emailOwner' => $data['email'],
 			'description' => $data['description']
 		]);
+	}
+
+	public function getVideo($id)
+	{
+		return $this->api()->request('get', 'Video/' . $id);
 	}
 }
