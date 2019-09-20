@@ -146,10 +146,14 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
                       type: self.fileType,
                       size: self.fileSize
                     })
-                    .then(response => (self.info = response))
-                    console.log(self.info)
-                    console.log(self.info.data)
-                    console.log(self.info.data.id)
+                    .then(function(response){
+                      self.info = response
+                      console.log(response)
+                      console.log(self.info)
+                      console.log(self.info.data)
+                      console.log(self.info.data.id)
+                    });
+                    
                     self.$root.baseModel = self.info.data
 
                     self.finish = true;
