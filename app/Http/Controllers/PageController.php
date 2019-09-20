@@ -11,6 +11,16 @@ class PageController extends Controller
 		return view('index');
 	}
 
+	public function getAbout()
+	{
+		return view('about');
+	}
+
+	public function getContact()
+	{
+		return view('contact');
+	}
+
 	public function getVideoFrame($id)
 	{
 		return view('video_frame');

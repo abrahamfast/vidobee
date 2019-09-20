@@ -63262,21 +63262,19 @@ process.umask = function() { return 0; };
       return(totalSize);
     };
     $.getName = function(){
-      var name = '';
+      var name = 0;
       $h.each($.files, function(file){
         name = file.fileName;
       });
-      return name;
+      return(name);
     };
-
-    $.getType = function(){
+     $.getType = function(){
       var type = '';
       $h.each($.files, function(file){
         type = file.file.type;
       });
-      return type;
+      return(type);
     };
-
     $.handleDropEvent = function (e) {
       onDrop(e);
     };
@@ -82138,8 +82136,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/devops/code/vidobee/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/devops/code/vidobee/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/abraham/code/vidobee/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/abraham/code/vidobee/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
