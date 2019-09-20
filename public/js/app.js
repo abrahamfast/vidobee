@@ -2002,7 +2002,7 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (response) {
           self.info = response;
           console.log(response.data.id);
-          id = response.data.id;
+          var id = response.data.id;
           self.$root.baseModel = id;
         });
         self.finish = true;

@@ -149,7 +149,7 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
                     .then(function(response){
                       self.info = response
                       console.log(response.data.id)
-                      id = response.data.id;
+                      var id = response.data.id;
                       self.$root.baseModel = id
                     });
                     
