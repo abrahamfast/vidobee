@@ -81,19 +81,6 @@
                         $('#free-upload-step-two').modal('hide')
                         $('#free-upload-proccess').modal('show')
                     })
-            },
-            upload: function () {
-              console.log('App upload')
-              r.upload()
-            },
-            pause: function(){
-                if (r.files.length>0) {
-                    if (r.isUploading()) {
-                        return  r.pause();
-                    }
-
-                    return r.upload();
-                }
             }
           }
 

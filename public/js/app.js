@@ -1977,6 +1977,7 @@ __webpack_require__.r(__webpack_exports__);
       var self = this;
       var progressBar = new ProgressBar($('#upload-progress'));
       r.on('fileAdded', function (file, event) {
+        self.limitUpload = false;
         self.fileName = r.getName();
         self.fileSize = r.getSize();
         self.fileType = r.getType();
@@ -2001,6 +2002,9 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (response) {
           return self.info = response;
         });
+        console.log(self.info);
+        console.log(self.info.data);
+        console.log(self.info.data.id);
         self.$root.baseModel = self.info.data;
         self.finish = true;
         self.disabled = false;
@@ -2192,19 +2196,6 @@ __webpack_require__.r(__webpack_exports__);
         $('#free-upload-step-two').modal('hide');
         $('#free-upload-proccess').modal('show');
       });
-    },
-    upload: function upload() {
-      console.log('App upload');
-      r.upload();
-    },
-    pause: function pause() {
-      if (r.files.length > 0) {
-        if (r.isUploading()) {
-          return r.pause();
-        }
-
-        return r.upload();
-      }
     }
   }
 });

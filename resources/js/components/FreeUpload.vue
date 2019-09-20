@@ -120,6 +120,7 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
                 let self = this;
                 const progressBar = new ProgressBar($('#upload-progress'));
                r.on('fileAdded', function(file, event){
+                    self.limitUpload = false;
                     self.fileName = r.getName();
                     self.fileSize = r.getSize();
                     self.fileType = r.getType();
@@ -146,7 +147,9 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
                       size: self.fileSize
                     })
                     .then(response => (self.info = response))
-
+                    console.log(self.info)
+                    console.log(self.info.data)
+                    console.log(self.info.data.id)
                     self.$root.baseModel = self.info.data
 
                     self.finish = true;
