@@ -2089,8 +2089,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    console.log('mounted');
-    this.link = this.$root.baseUrl + this.$root.baseModel.id;
+    this.link = this.$root.baseUrl + "/" + this.$root.baseModel;
   },
   data: function data() {
     return {
@@ -66894,7 +66893,7 @@ var render = function() {
                   "a",
                   {
                     staticClass: "btn btn-primary btn-block",
-                    attrs: { href: _vm.link, type: "submit" }
+                    attrs: { href: _vm.link }
                   },
                   [_vm._v("Embeded Code")]
                 ),

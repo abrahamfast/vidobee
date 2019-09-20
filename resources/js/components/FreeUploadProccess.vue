@@ -14,7 +14,7 @@
             </button>
           </div>
           <div class="modal-body px-md-4 px-lg-5 pb-4 pb-lg-5">
-              <a :href="link" class="btn btn-primary btn-block" type="submit">Embeded Code</a>
+              <a :href="link" class="btn btn-primary btn-block">Embeded Code</a>
             <div class="text-center text-small mt-3">
               Already have an account? <a href="/signup">Sign in here</a>
             </div>
@@ -28,8 +28,7 @@
 
     export default {
         mounted() {
-            console.log('mounted');
-            this.link = this.$root.baseUrl + this.$root.baseModel.id;
+            this.link = this.$root.baseUrl + "/" + this.$root.baseModel;
         },
         data: function () {
           return {
