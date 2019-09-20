@@ -51,7 +51,7 @@
     import Multiselect from 'vue-multiselect'
   
     export default {
-        components: { Multiselect},
+        components: {Multiselect},
         data: function () {
           return {
             title: '',
@@ -70,7 +70,7 @@
             next: function () {
                   let self = this;
                   HTTP.post('api/attachment/update', {
-                      id: self.$root.baseModel.id,
+                      id: self.$root.baseModel,
                       title: self.title,
                       email: self.email,
                       tags: self.tags,
