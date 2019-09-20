@@ -70,7 +70,7 @@
             next: function () {
                   let self = this;
                   HTTP.post('api/attachment/update', {
-                      id: self.$root.baseModel.data.id,
+                      id: self.$root.baseModel.id,
                       title: self.title,
                       email: self.email,
                       tags: self.tags,
