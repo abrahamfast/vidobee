@@ -2001,12 +2001,8 @@ __webpack_require__.r(__webpack_exports__);
           size: self.fileSize
         }).then(function (response) {
           self.info = response;
-          console.log(response);
-          console.log(self.info);
-          console.log(self.info.data);
-          console.log(self.info.data.id);
+          self.$root.baseModel = response.info.data;
         });
-        self.$root.baseModel = self.info.data;
         self.finish = true;
         self.disabled = false;
       });
@@ -2187,7 +2183,7 @@ __webpack_require__.r(__webpack_exports__);
     next: function next() {
       var self = this;
       HTTP.post('api/attachment/update', {
-        id: this.$root.baseModel.id,
+        id: this.$root.baseModel.data.id,
         title: self.title,
         email: self.email,
         tags: self.tags,
