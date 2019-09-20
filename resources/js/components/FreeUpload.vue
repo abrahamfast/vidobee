@@ -14,15 +14,21 @@
           </div>
           <div class="modal-body px-md-4 px-lg-5 pb-4 pb-lg-5">
             <form method="POST">
+              <div class="form-group" v-if="limitUpload">
+                <div class="alert alert-danger" role="alert">
+                  Oops Please Select Your File
+                </div>
+              </div>
+
               <div class="form-group" v-if="limitSize">
                 <div class="alert alert-danger" role="alert">
-                  Oops <div class="badge badge-primary-2 badge-pill">{{fileName}}</div> Size is Big
+                  Oops Size is Big
                 </div>
               </div>
 
               <div class="form-group" v-if="limitType">
                 <div class="alert alert-danger" role="alert">
-                  <div class="badge badge-primary-2 badge-pill">{{fileName}}</div> Type is incorrect
+                  Type is incorrect. select MP4, mkv, webmd
                 </div>
               </div>
 
@@ -57,10 +63,10 @@
               </div>
 
             
-              <button class="btn btn-primary btn-block" type="submit" @click="next" >Next</button>
+              <button class="btn btn-primary btn-block" type="submit" @click="next" :disabled="disabled === true" >Next</button>
             </form>
             <div class="text-center text-small mt-3">
-              Already have an account? <a href="account-sign-in-simple.html">Sign in here</a>
+              Already have an account? <a href="/signup">Sign in here</a>
             </div>
           </div>
         </div>
@@ -94,13 +100,21 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
             fileType: '',
             limitSize: false,
             limitType: false,
-            info: false
+            info: false,
+            limitUpload: false,
+            // @TODO need next button first time disabled
+            disabled: false
           }
         },
           methods: {
             next: function(){
+              if(this.finish) {
                 $('#free-upload').modal('hide')
                 $('#free-upload-step-two').modal('show')
+              } else {
+                this.limitUpload = true
+              }
+                
             },
             init: function () {
                 let self = this;
@@ -136,6 +150,7 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
                     self.$root.baseModel = self.info.data
 
                     self.finish = true;
+                    self.disabled = false
                 });
 
                   r.on('progress', function(){ 

@@ -1931,6 +1931,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1952,13 +1958,20 @@ __webpack_require__.r(__webpack_exports__);
       fileType: '',
       limitSize: false,
       limitType: false,
-      info: false
+      info: false,
+      limitUpload: false,
+      // @TODO need next button first time disabled
+      disabled: false
     };
   },
   methods: {
     next: function next() {
-      $('#free-upload').modal('hide');
-      $('#free-upload-step-two').modal('show');
+      if (this.finish) {
+        $('#free-upload').modal('hide');
+        $('#free-upload-step-two').modal('show');
+      } else {
+        this.limitUpload = true;
+      }
     },
     init: function init() {
       var self = this;
@@ -1990,6 +2003,7 @@ __webpack_require__.r(__webpack_exports__);
         });
         self.$root.baseModel = self.info.data;
         self.finish = true;
+        self.disabled = false;
       });
       r.on('progress', function () {
         progressBar.uploading(r.progress() * 100);
@@ -66609,6 +66623,23 @@ var render = function() {
               { staticClass: "modal-body px-md-4 px-lg-5 pb-4 pb-lg-5" },
               [
                 _c("form", { attrs: { method: "POST" } }, [
+                  _vm.limitUpload
+                    ? _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "alert alert-danger",
+                            attrs: { role: "alert" }
+                          },
+                          [
+                            _vm._v(
+                              "\n              Oops Please Select Your File\n            "
+                            )
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
                   _vm.limitSize
                     ? _c("div", { staticClass: "form-group" }, [
                         _c(
@@ -66618,15 +66649,9 @@ var render = function() {
                             attrs: { role: "alert" }
                           },
                           [
-                            _vm._v("\n              Oops "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "badge badge-primary-2 badge-pill"
-                              },
-                              [_vm._v(_vm._s(_vm.fileName))]
-                            ),
-                            _vm._v(" Size is Big\n            ")
+                            _vm._v(
+                              "\n              Oops Size is Big\n            "
+                            )
                           ]
                         )
                       ])
@@ -66641,14 +66666,9 @@ var render = function() {
                             attrs: { role: "alert" }
                           },
                           [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "badge badge-primary-2 badge-pill"
-                              },
-                              [_vm._v(_vm._s(_vm.fileName))]
-                            ),
-                            _vm._v(" Type is incorrect\n            ")
+                            _vm._v(
+                              "\n              Type is incorrect. select MP4, mkv, webmd\n            "
+                            )
                           ]
                         )
                       ])
@@ -66742,7 +66762,10 @@ var render = function() {
                     "button",
                     {
                       staticClass: "btn btn-primary btn-block",
-                      attrs: { type: "submit" },
+                      attrs: {
+                        type: "submit",
+                        disabled: _vm.disabled === true
+                      },
                       on: { click: _vm.next }
                     },
                     [_vm._v("Next")]
@@ -66826,9 +66849,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center text-small mt-3" }, [
       _vm._v("\n          Already have an account? "),
-      _c("a", { attrs: { href: "account-sign-in-simple.html" } }, [
-        _vm._v("Sign in here")
-      ])
+      _c("a", { attrs: { href: "/signup" } }, [_vm._v("Sign in here")])
     ])
   }
 ]
