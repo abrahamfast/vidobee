@@ -8,8 +8,8 @@
         <div class="container pb-5">
           <div class="row">
             <div class="col-lg-6 col-md-8">
-              <h1 class="display-3">Plugins</h1>
-              <div class="lead">An overview of Jumpstart's extended Javascript functionality. <a target="_blank" href="documentation/index.html">Click here</a> to see full documentation.</div>
+              <h1 class="display-3">Your Video Uploaded</h1>
+              <div class="lead">You can published with embed code form above section</div>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@
    <div class="col-lg-12">
             <div class="row mb-md-5 mb-4">
               <div class="col">
-                <h6>Self-Hosted Player</h6>
+                <h6>Vidobee Self-Hosted Player</h6>
                 <div class="rounded o-hidden">
                   <video preload="metadata"  class="plyr" controls crossorigin playsinline poster="poster" ></video>
                 </div>

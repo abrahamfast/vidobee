@@ -67303,7 +67303,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "col-lg-12" }, [
                 _c("div", { staticClass: "row mb-md-5 mb-4" }, [
                   _c("div", { staticClass: "col" }, [
-                    _c("h6", [_vm._v("Self-Hosted Player")]),
+                    _c("h6", [_vm._v("Vidobee Self-Hosted Player")]),
                     _vm._v(" "),
                     _c("div", { staticClass: "rounded o-hidden" }, [
                       _c("video", {
