@@ -2,13 +2,8 @@
 	<section class="border-bottom" id="video-players">
       <div class="container">
         <div class="row justify-content-between align-items-start">
-          <div class="col-lg-3 mb-4 sticky-lg-top">
-            <h4>Video Players</h4>
-            <p>Youtube, Vimeo and locally hosted videos in a versatile, seamless interface. Powered by the Plyr plugin.</p>
-            <a href="documentation/js-plyr.html" target="_blank">View Documentation</a>
-          </div>
 
-   <div class="col-lg-8">
+   <div class="col-lg-12">
             <div class="row mb-md-5 mb-4">
               <div class="col">
                 <h6>Self-Hosted Player</h6>

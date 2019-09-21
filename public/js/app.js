@@ -2232,11 +2232,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 //@TODO must instal player and hls from npm
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -67305,28 +67300,7 @@ var staticRenderFns = [
             "div",
             { staticClass: "row justify-content-between align-items-start" },
             [
-              _c("div", { staticClass: "col-lg-3 mb-4 sticky-lg-top" }, [
-                _c("h4", [_vm._v("Video Players")]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Youtube, Vimeo and locally hosted videos in a versatile, seamless interface. Powered by the Plyr plugin."
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href: "documentation/js-plyr.html",
-                      target: "_blank"
-                    }
-                  },
-                  [_vm._v("View Documentation")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-8" }, [
+              _c("div", { staticClass: "col-lg-12" }, [
                 _c("div", { staticClass: "row mb-md-5 mb-4" }, [
                   _c("div", { staticClass: "col" }, [
                     _c("h6", [_vm._v("Self-Hosted Player")]),
