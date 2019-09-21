@@ -21,7 +21,9 @@
         <div class="divider divider-bottom bg-white"></div>
       </section>
     </div>
-
+<script>
+  window.vidobee = "{{$id}}";
+</script>
 
 
           <player></player>

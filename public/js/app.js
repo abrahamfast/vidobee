@@ -2238,8 +2238,8 @@ __webpack_require__.r(__webpack_exports__);
     var self = this; // HTTP.get('api/video/' + self.$root.baseModel).then(response => (this.info = response))
 
     document.addEventListener('DOMContentLoaded', function () {
-      var source = 'https://cdn.video.snapycloud.com/' + self.$root.baseModel + '/playlist.m3u8';
-      self.poster = 'https://cdn.video.snapycloud.com/cover/' + self.$root.baseModel + '.jpg';
+      var source = 'https://cdn.video.snapycloud.com/' + window.vidobee + '/playlist.m3u8';
+      self.poster = 'https://cdn.video.snapycloud.com/cover/' + window.vidobee + '.jpg';
       var video = document.querySelector('video'); // For more options see: https://github.com/sampotts/plyr/#options
       // captions.update is required for captions to work with hls.js
 
