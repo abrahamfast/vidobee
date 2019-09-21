@@ -2,17 +2,17 @@
 
 @section('main')
  <video preload="metadata"  class="plyr" controls crossorigin playsinline 
- poster="https://cdn.video.snapycloud.com/cover/5d8540860507d66eb1.jpg"
+ poster="https://cdn.video.snapycloud.com/cover/{{ $id }}.jpg"
  ></video>
 
  <script>
   document.addEventListener('DOMContentLoaded', () => {
-  const source = 'https://cdn.video.snapycloud.com/5d854d18d2cf7b999/playlist.m3u8';
+  const source = 'https://cdn.video.snapycloud.com/{{ $id }}/playlist.m3u8';
   const video = document.querySelector('video');
   
   // For more options see: https://github.com/sampotts/plyr/#options
   // captions.update is required for captions to work with hls.js
-  const player = new Plyr(video, {settings: ['captions', 'quality', 'speed', 'loop'],title: 'Example Title',captions: {active: false, update: true, language: 'en'}, quality: { default: 720, options: [4320, 2880, 2160, 1440, 1080, 720, 576, 480, 360, 240] }});
+  const player = new Plyr(video, {settings: ['captions', 'quality', 'speed', 'loop'],title: 'Example Title',captions: {active: false, update: true, language: 'en'}, quality: { default: 576, options: [4320, 2880, 2160, 1440, 1080, 720, 576, 480, 360, 240] }});
   const track = video.addTextTrack('subtitles', 'Volapük', 'vo');
  track.addCue(new VTTCue(0, 3, 'Your first cue'));
   // track.addCue(new VTTCue(0, 4, 'Ven lärnoy püki votik, vödastok plösenon fikulis.'));
