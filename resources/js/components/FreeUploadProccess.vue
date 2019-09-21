@@ -15,7 +15,6 @@
             </button>
           </div>
           <div class="modal-body px-md-4 px-lg-5 pb-4 pb-lg-5">
-            <span data-countup data-start="0" data-end="1000" data-duration="0.1" data-suffix="%">0%</span>
               <a :href="link" class="btn btn-primary btn-block">embed Code</a>
             <div class="text-center text-small mt-3">
               Already have an account? <a href="/signup">Sign in here</a>
@@ -30,7 +29,7 @@
 
     export default {
         mounted() {
-            this.link = this.$root.baseUrl + "/" + this.$root.baseModel;
+            this.link = this.$root.baseUrl + "/video/" + this.$root.baseModel;
         },
         data: function () {
           return {

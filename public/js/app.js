@@ -2088,10 +2088,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    this.link = this.$root.baseUrl + "/" + this.$root.baseModel;
+    this.link = this.$root.baseUrl + "/video/" + this.$root.baseModel;
   },
   data: function data() {
     return {
@@ -66899,20 +66898,6 @@ var render = function() {
               { staticClass: "modal-body px-md-4 px-lg-5 pb-4 pb-lg-5" },
               [
                 _c(
-                  "span",
-                  {
-                    attrs: {
-                      "data-countup": "",
-                      "data-start": "0",
-                      "data-end": "1000",
-                      "data-duration": "0.1",
-                      "data-suffix": "%"
-                    }
-                  },
-                  [_vm._v("0%")]
-                ),
-                _vm._v(" "),
-                _c(
                   "a",
                   {
                     staticClass: "btn btn-primary btn-block",
@@ -81751,7 +81736,7 @@ var app = new Vue({
   el: '#app',
   data: {
     //only place where data is not a function
-    baseModel: "5d8540860507d66eb",
+    baseModel: "",
     baseUrl: 'https://vidobee.com'
   }
 });

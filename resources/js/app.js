@@ -61,7 +61,7 @@ Vue.component('player', require('./components/Player').default);
 const app = new Vue({
     el: '#app',
         data:{ //only place where data is not a function
-        baseModel: "5d8540860507d66eb",
+        baseModel: "",
         baseUrl: 'https://vidobee.com'
     }
 });
