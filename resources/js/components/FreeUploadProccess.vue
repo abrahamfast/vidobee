@@ -29,6 +29,7 @@
 
     export default {
         mounted() {
+          console.log(this.$root.baseModel, this.$root)
             this.link = this.$root.baseUrl + "/video/" + this.$root.baseModel;
         },
         data: function () {

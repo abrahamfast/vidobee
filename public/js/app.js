@@ -2090,6 +2090,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
+    console.log(this.$root.baseModel, this.$root);
     this.link = this.$root.baseUrl + "/video/" + this.$root.baseModel;
   },
   data: function data() {
@@ -2239,7 +2240,7 @@ __webpack_require__.r(__webpack_exports__);
 
     document.addEventListener('DOMContentLoaded', function () {
       var source = 'https://cdn.video.snapycloud.com/' + window.vidobee + '/playlist.m3u8';
-      self.poster = 'https://cdn.video.snapycloud.com/cover/' + window.vidobee + '.jpg';
+      self.cover = 'https://cdn.video.snapycloud.com/cover/' + window.vidobee + '.jpg';
       var video = document.querySelector('video'); // For more options see: https://github.com/sampotts/plyr/#options
       // captions.update is required for captions to work with hls.js
 
@@ -2262,6 +2263,7 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!Hls.isSupported()) {
         video.src = source;
+        video.poster = self.cover;
       } else {
         // For more Hls.js options, see https://github.com/dailymotion/hls.js
         var hls = new Hls();
@@ -2309,7 +2311,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ['target'],
   data: function data() {
     return {
-      info: false
+      info: false,
+      cover: false
     };
   },
   methods: {
@@ -67519,7 +67522,7 @@ var staticRenderFns = [
                           controls: "",
                           crossorigin: "",
                           playsinline: "",
-                          poster: "poster"
+                          poster: "cover"
                         }
                       })
                     ])

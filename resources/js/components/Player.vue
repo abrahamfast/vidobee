@@ -8,7 +8,7 @@
               <div class="col">
                 <h6>Vidobee Self-Hosted Player</h6>
                 <div class="rounded o-hidden">
-                  <video preload="metadata"  class="plyr" controls crossorigin playsinline poster="poster" ></video>
+                  <video preload="metadata"  class="plyr" controls crossorigin playsinline poster="cover" ></video>
                 </div>
               </div>
             </div>
@@ -29,7 +29,7 @@
            // HTTP.get('api/video/' + self.$root.baseModel).then(response => (this.info = response))
             document.addEventListener('DOMContentLoaded', () => {
   const source = 'https://cdn.video.snapycloud.com/' + window.vidobee + '/playlist.m3u8';
-  self.poster = 'https://cdn.video.snapycloud.com/cover/' + window.vidobee + '.jpg';
+  self.cover = 'https://cdn.video.snapycloud.com/cover/' + window.vidobee + '.jpg';
   const video = document.querySelector('video');
   
   // For more options see: https://github.com/sampotts/plyr/#options
@@ -42,6 +42,7 @@
 
   if (!Hls.isSupported()) {
     video.src = source;
+    video.poster = self.cover
   } else {
     // For more Hls.js options, see https://github.com/dailymotion/hls.js
     const hls = new Hls();
@@ -88,7 +89,8 @@
         props: ['target'],
         data(){
           return {
-            info: false
+            info: false,
+            cover: false
           }
         },
         methods: {
