@@ -24,4 +24,14 @@ class Controller extends BaseController
 
 		return $client;
 	}
+
+	public function landing()
+	{
+		return view('landing');
+	}
+
+	public function upload()
+	{
+		return view('upload');
+	}
 }

@@ -92,7 +92,7 @@ import 'vue2-dropzone/dist/vue2Dropzone.min.css'
         data: function () {
           return {
             mimeType: [
-              'video/mp4', 'video/mkv', 'video/x-msvideo', 'video/mpeg', 'video/webm', 'video/mp2t'
+              'video/mp4', 'video/mkv', 'video/x-msvideo', 'video/mpeg', 'video/webm', 'video/mp2t', 'video/quicktime'
             ],
             finish: false,
             fileName: '',

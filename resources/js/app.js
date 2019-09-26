@@ -43,6 +43,7 @@ Vue.use(VueEditorMarkdown);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+Vue.component('upload', require('./components/UploadComponent.vue').default);
 Vue.component('free-upload', require('./components/FreeUpload.vue').default);
 Vue.component('free-upload-step-two', require('./components/FreeUploadStep2.vue').default);
 Vue.component('free-upload-proccess', require('./components/FreeUploadProccess.vue').default);
